@@ -1,0 +1,19 @@
+<div class="container">
+  <h1><%= @restaurant.name%></h1>
+  <ul>
+    <li><strong>Adress : </strong><%= @restaurant.address %></li>
+    <li><strong>Phone : </strong><%= @restaurant.phone_number %></li>
+    <li><strong>Category : </strong><%= @restaurant.category %></li>
+  </ul>
+
+  <h2>Reviews</h2>
+  <ul>
+    <%@restaurant.reviews.each do |review| %>
+      <li><%= review.content %></li>
+    <% end %>
+  </ul>
+
+  <%= link_to 'Add a review', new_restaurant_review_path(@restaurant)%>
+
+  <p class='py-3'><%= link_to 'Back to restaurants', restaurants_path %></p>
+</div>

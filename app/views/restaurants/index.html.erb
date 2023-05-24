@@ -1,0 +1,12 @@
+<div class="container">
+  <% @restaurants.each do |restaurant| %>
+    <div class="link_to_default_style container">
+      <%= link_to restaurant_path(restaurant) do %>
+      <div class="d-flex align-items-center">
+        <h1><%= restaurant.name%></h1>
+      </div>
+      <% end %>
+    </div>
+  <% end %>
+  <%= link_to 'Add a new restaurant', new_restaurant_path%>
+</div>
