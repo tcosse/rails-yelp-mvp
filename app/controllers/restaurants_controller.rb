@@ -1,7 +1,9 @@
 class RestaurantsController < ApplicationController
   before_action :set_restaurant, only: %i[show]
 
-  def show; end
+  def show
+    @reviews = @restaurant.reviews
+  end
 
   def new
     @restaurant = Restaurant.new
